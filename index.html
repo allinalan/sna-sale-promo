@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sale Promo Planner</title>
+<meta name="description" content="Plan your Sale Promo step by step: dates, texts, emails, calls, lists and a day-by-day game plan. Download it as a PDF when it's done.">
+<meta name="theme-color" content="#0E1A33">
+<meta property="og:title" content="Sale Promo Planner">
+<meta property="og:description" content="Sharp Ninja Academy: plan your Sale Promo step by step and download it as a PDF.">
+<meta property="og:type" content="website">
+<style>
+  :root{ color-scheme: light dark; }
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0}
+  [hidden]{display:none !important}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  :root{
+    --ground:#F7F9FC; --surface:#FFFFFF; --sunk:#EEF2F9; --head:#0E1A33;
+    --ink:#0E1A33; --ink-2:#3D4D6B; --ink-3:#71809C; --on-head:#DCE6F7;
+    --rule:#DCE4F0; --rule-2:#C6D2E4;
+    --accent:#0F8C7E; --accent-soft:#E4F3F0; --accent-head:#3FD0BC;
+    --over:#A93226; --over-soft:#FBEAE7; --warn:#B4700C; --warn-soft:#FBF1E0; --warn-head:#F0B354; --on-accent:#FFFFFF;
+    --shadow:0 1px 2px rgba(14,26,51,.06), 0 8px 24px rgba(14,26,51,.05);
+    --display:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --body:'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0B1425; --surface:#131F36; --sunk:#0E1930; --head:#1C2C4C;
+      --ink:#E8EEF8; --ink-2:#AFC0DA; --ink-3:#7D8FAE; --on-head:#DCE6F7;
+      --rule:#243352; --rule-2:#31436A;
+      --accent:#3FD0BC; --accent-soft:#12312F; --accent-head:#3FD0BC;
+      --over:#F07A6B; --over-soft:#351916; --warn:#E7A94A; --warn-soft:#33270F; --warn-head:#F0B354; --on-accent:#0B1425;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0B1425; --surface:#131F36; --sunk:#0E1930; --head:#1C2C4C;
+    --ink:#E8EEF8; --ink-2:#AFC0DA; --ink-3:#7D8FAE; --on-head:#DCE6F7;
+    --rule:#243352; --rule-2:#31436A;
+    --accent:#3FD0BC; --accent-soft:#12312F; --accent-head:#3FD0BC;
+    --over:#F07A6B; --over-soft:#351916; --warn:#E7A94A; --warn-soft:#33270F; --warn-head:#F0B354; --on-accent:#0B1425;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.3);
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--ground); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.5}
+  .wrap{max-width:720px; margin:0 auto; padding-inline:16px; padding-block:26px 140px}
+  a{color:var(--accent)}
+
+  .eyebrow{font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin:0 0 10px}
+  h1{font-family:var(--display); font-weight:800; font-size:clamp(30px,8vw,42px); line-height:1.04; letter-spacing:-.02em; margin:0 0 12px; text-wrap:balance}
+  .lede{margin:0; color:var(--ink-2); font-size:16.5px; max-width:56ch}
+  .lede strong{color:var(--ink); font-weight:600}
+
+  /* the 4 T's strip */
+  .fours{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:18px}
+  .four{background:var(--surface); border:1px solid var(--rule); border-radius:10px; padding:9px 10px}
+  .four b{display:block; font-family:var(--display); font-size:15px}
+  .four span{font-size:12.5px; color:var(--ink-3); line-height:1.35; display:block}
+  @media (max-width:560px){ .fours{grid-template-columns:repeat(2,1fr)} }
+
+  /* jump nav */
+  .jump{display:flex; gap:6px; flex-wrap:wrap; margin-top:16px}
+  .jump a{font-family:var(--mono); font-size:11.5px; font-weight:600; text-decoration:none; color:var(--ink-2); background:var(--surface); border:1px solid var(--rule); border-radius:999px; padding:5px 10px}
+  .jump a:hover{border-color:var(--accent); color:var(--accent)}
+  .jump a.done{color:var(--accent); border-color:var(--accent)}
+
+  .step{margin-top:38px; scroll-margin-top:12px}
+  .step-head{display:flex; align-items:baseline; gap:10px; margin-bottom:6px}
+  .step-n{font-family:var(--mono); font-size:12px; font-weight:600; color:var(--accent); letter-spacing:.08em; flex:none}
+  h2{font-family:var(--display); font-weight:700; font-size:22px; letter-spacing:-.01em; margin:0; line-height:1.2}
+  .step-sub{margin:0 0 14px; color:var(--ink-3); font-size:14.5px; max-width:58ch}
+  .step-sub strong{color:var(--ink-2)}
+  h3{font-family:var(--display); font-weight:700; font-size:16px; margin:0}
+
+  .card{background:var(--surface); border:1px solid var(--rule); border-radius:12px; box-shadow:var(--shadow); overflow:hidden}
+  .card + .card{margin-top:12px}
+  .row{display:flex; align-items:center; gap:12px; padding:11px 14px; border-bottom:1px solid var(--rule)}
+  .row:last-child{border-bottom:0}
+  .row > label, .row > .lbl{flex:1; font-size:15px; color:var(--ink-2); min-width:0}
+  .row small{display:block; font-size:12.5px; color:var(--ink-3); line-height:1.35}
+  .row .unit{font-family:var(--mono); font-size:12px; color:var(--ink-3); flex:none}
+  .ctitle{display:flex; align-items:center; gap:10px; padding:12px 14px; background:var(--sunk); border-bottom:1px solid var(--rule)}
+  .ctitle h3{flex:1}
+
+  input[type="number"], input[type="text"], input[type="date"], input[type="email"], select{
+    font-family:var(--body); font-size:16px; color:var(--ink);
+    background:var(--sunk); border:1px solid var(--rule); border-radius:7px; padding:7px 9px; min-width:0;
+  }
+  input[type="text"]{width:100%}
+  .row input[type="text"]{flex:1.4}
+  input[type="number"]{font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right; width:96px; flex:none}
+  input[type="date"]{flex:none; width:158px}
+  input:focus-visible, button:focus-visible, select:focus-visible, a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+
+  .seg{display:inline-flex; border:1px solid var(--rule-2); border-radius:8px; overflow:hidden; flex:none}
+  .seg button{background:var(--surface); border:0; border-left:1px solid var(--rule-2); padding:7px 12px; font-family:var(--body); font-size:14px; font-weight:600; color:var(--ink-2); cursor:pointer}
+  .seg button:first-child{border-left:0}
+  .seg button[aria-pressed="true"]{background:var(--head); color:#FFFFFF}
+  .seg.wide{display:flex; width:100%}
+  .seg.wide button{flex:1}
+  .stack{padding:11px 14px; border-bottom:1px solid var(--rule)}
+  .stack > .lbl{display:block; font-size:15px; color:var(--ink-2); margin-bottom:8px}
+
+  .out{font-family:var(--mono); font-size:18px; font-weight:600; font-variant-numeric:tabular-nums; flex:none}
+
+  .rule{margin-top:12px; padding:12px 14px; border-radius:10px; border:1px solid var(--rule); background:var(--surface); font-size:14.5px; color:var(--ink-2)}
+  .rule b.tag{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; margin-bottom:3px}
+  .rule strong{color:var(--ink)}
+  .rule.go{background:var(--accent-soft); border-color:transparent}
+  .rule.go b.tag{color:var(--accent)}
+  .rule.warn{background:var(--warn-soft); border-color:transparent}
+  .rule.warn b.tag{color:var(--warn)}
+  .rule.stop{background:var(--over-soft); border-color:transparent}
+  .rule.stop b.tag{color:var(--over)}
+  .rule .btnlink{display:inline-block; margin-top:8px; font-weight:600}
+
+  .ck{display:flex; gap:11px; align-items:flex-start; padding:11px 14px; border-bottom:1px solid var(--rule); cursor:pointer}
+  .ck:last-child{border-bottom:0}
+  .ck input{width:20px; height:20px; margin:2px 0 0; flex:none; accent-color:var(--accent)}
+  .ck span{font-size:15px; color:var(--ink)}
+  .ck span small{display:block; color:var(--ink-3); font-size:13px; line-height:1.4}
+  .ck.on span{color:var(--ink-3)}
+  .count{font-family:var(--mono); font-size:12px; font-weight:600; color:var(--ink-3)}
+  .count.full{color:var(--accent)}
+
+  /* daily game plan */
+  .day{display:grid; grid-template-columns:78px 1fr; gap:10px; align-items:start; padding:9px 12px; border-bottom:1px solid var(--rule)}
+  .day:last-child{border-bottom:0}
+  .day.wkend{background:var(--sunk)}
+  .dname{font-family:var(--mono); font-size:12.5px; font-weight:600; color:var(--ink-2); line-height:1.25; padding-top:7px}
+  .dname i{display:block; font-style:normal; font-weight:500; color:var(--ink-3); font-size:11px}
+  .tags{display:flex; flex-wrap:wrap; gap:4px; margin-bottom:5px}
+  .tags:empty{display:none}
+  .t{font-family:var(--mono); font-size:10.5px; font-weight:600; letter-spacing:.03em; padding:2px 7px; border-radius:999px; background:var(--accent-soft); color:var(--accent)}
+  .t.txt{background:var(--warn-soft); color:var(--warn)}
+  .t.edge{background:var(--head); color:#FFFFFF}
+  .day input[type="text"]{font-size:15px; padding:6px 8px}
+  .quick{display:flex; gap:6px; flex-wrap:wrap; padding:11px 14px; border-bottom:1px solid var(--rule); background:var(--sunk)}
+  .quick span{font-size:13px; color:var(--ink-3); width:100%}
+  .chip{background:var(--surface); border:1px solid var(--rule-2); border-radius:999px; padding:5px 10px; font-family:var(--body); font-size:13px; font-weight:600; color:var(--ink-2); cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--head); border-color:var(--head); color:#FFFFFF}
+  .empty{padding:18px 14px; color:var(--ink-3); font-size:14.5px}
+
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:0}
+  .stat{padding:11px 14px; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule)}
+  .stat:nth-child(3n){border-right:0}
+  .stat label{display:block; font-family:var(--mono); font-size:10.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); margin-bottom:4px}
+  .stat input[type="number"]{width:100%}
+  .stat b{font-family:var(--mono); font-size:19px; font-weight:600; font-variant-numeric:tabular-nums; display:block; padding-top:4px}
+  @media (max-width:520px){ .stats{grid-template-columns:repeat(2,1fr)} .stat:nth-child(3n){border-right:1px solid var(--rule)} .stat:nth-child(2n){border-right:0} }
+
+  .ready{padding:16px 14px}
+  .ready .big{font-family:var(--mono); font-weight:600; font-size:40px; line-height:1; font-variant-numeric:tabular-nums}
+  .ready .lab{font-family:var(--mono); font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; margin:4px 0 10px; color:var(--ink-3)}
+  .meter{height:8px; border-radius:99px; background:var(--sunk); overflow:hidden; margin-bottom:12px}
+  .meter i{display:block; height:100%; background:var(--accent); width:0}
+  .ready ul{margin:0; padding-left:18px; color:var(--ink-2); font-size:14.5px}
+  .ready ul li{margin:3px 0}
+  .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+  .act{flex:1; min-width:180px; padding:13px; cursor:pointer; border-radius:11px; font-family:var(--body); font-size:15px; font-weight:600; background:var(--accent); color:var(--on-accent); border:1px solid var(--accent)}
+  .act:hover{filter:brightness(1.08)}
+  .act.ghost{background:var(--surface); color:var(--ink-2); border-color:var(--rule-2)}
+  .act.ghost:hover{border-color:var(--accent); color:var(--accent)}
+  .actmsg{margin:10px 0 0; font-size:14px; color:var(--ink-2)}
+  .note{margin-top:12px; padding:11px 13px; border-radius:9px; background:var(--accent-soft); font-size:13.5px; color:var(--ink-2)}
+
+  .res a.resrow{display:flex; gap:12px; align-items:center; padding:12px 14px; border-bottom:1px solid var(--rule); text-decoration:none; color:var(--ink)}
+  .res a.resrow:last-child{border-bottom:0}
+  .res a.resrow:hover{background:var(--sunk)}
+  .res .ic{flex:none; width:34px; height:34px; border-radius:9px; background:var(--head); color:var(--accent-head); display:grid; place-items:center; font-family:var(--mono); font-size:12px; font-weight:600}
+  .res .rt{flex:1; min-width:0}
+  .res .rt b{display:block; font-size:15px}
+  .res .rt span{display:block; font-size:13px; color:var(--ink-3); line-height:1.35}
+  .res .go{flex:none; font-family:var(--mono); color:var(--ink-3)}
+
+  .foot{margin-top:28px; padding-top:16px; border-top:1px solid var(--rule); display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+  .foot p{margin:0; flex:1; min-width:200px; font-size:12.5px; color:var(--ink-3)}
+  .reset{background:transparent; border:1px solid var(--rule-2); border-radius:8px; padding:8px 13px; cursor:pointer; font-family:var(--body); font-size:13px; font-weight:600; color:var(--ink-3)}
+  .reset:hover{border-color:var(--over); color:var(--over)}
+  .credit{margin-top:14px; font-size:12px; color:var(--ink-3)}
+  .is-over{color:var(--over)} .is-good{color:var(--accent)} .is-warn{color:var(--warn)}
+
+  .bar{position:fixed; left:0; right:0; bottom:0; z-index:20; background:var(--surface); border-top:1px solid var(--rule-2); padding:10px 16px; padding-bottom:calc(10px + env(safe-area-inset-bottom, 0px)); box-shadow:0 -6px 22px rgba(14,26,51,.08)}
+  .bar-in{max-width:720px; margin:0 auto; display:flex; align-items:center; gap:12px}
+  .bar-in .bt{flex:1; min-width:0}
+  .bar-in i{display:block; font-style:normal; font-family:var(--mono); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); white-space:nowrap}
+  .bar-in b{font-family:var(--mono); font-size:17px; font-weight:600; font-variant-numeric:tabular-nums}
+
+  #print-summary{display:none}
+  @media print{
+    :root{color-scheme:light}
+    body{background:#FFFFFF !important; color:#000000}
+    .wrap, .bar{display:none !important}
+    #print-summary{display:block; padding:8px 4px; font-family:var(--body); font-size:11pt; line-height:1.4; color:#000000}
+    #print-summary h1{font-family:var(--display); font-size:21pt; margin:0 0 2px; color:#000000}
+    #print-summary h2{font-family:var(--mono); font-size:9.5pt; letter-spacing:.12em; margin:14px 0 5px; padding-bottom:3px; border-bottom:1px solid #999999}
+    #print-summary p{margin:2px 0; white-space:pre-wrap}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Sharp Ninja Academy</p>
+  <h1>Sale Promo Planner</h1>
+  <p class="lede">A sale promo isn't one text. It's a plan: <strong>who you reach, how, on which days, and how many calls it takes.</strong> Work down this page in order. Everything saves on this device as you type, and when it's done you download it as a PDF.</p>
+
+  <div class="fours" aria-label="The four parts of a sale promo">
+    <div class="four"><b>Tempt</b><span>Mail, email, text and calls that get them interested</span></div>
+    <div class="four"><b>Touch</b><span>Launch, reminder, last chance, extension</span></div>
+    <div class="four"><b>Target</b><span>Who you call, in what order</span></div>
+    <div class="four"><b>Track</b><span>Call lists, hot list, your numbers</span></div>
+  </div>
+
+  <nav class="jump" aria-label="Jump to a step" id="jump">
+    <a href="#s1">1 Basics</a><a href="#s2">2 Tempt &amp; Touch</a><a href="#s3">3 Phone</a><a href="#s4">4 Day by day</a><a href="#s5">5 By launch</a><a href="#s6">6 Your list</a><a href="#s7">7 During &amp; after</a><a href="#s8">8 Download</a><a href="#s9">Links</a>
+  </nav>
+
+  <!-- 1 -->
+  <section class="step" id="s1">
+    <div class="step-head"><span class="step-n">01</span><h2>The basics</h2></div>
+    <p class="step-sub">Name it, date it, and know your number. <strong>Start 6 to 8 weeks before launch</strong> if you can. If launch is sooner, that's fine, just do step 5 this week.</p>
+    <div class="card">
+      <div class="row"><label for="f-name">Your name</label><input type="text" id="f-name" data-k="name" placeholder="First and last" autocomplete="name"></div>
+      <div class="row"><label for="f-theme">Promo name / theme</label><input type="text" id="f-theme" data-k="theme" placeholder="Holiday Sale Promo 2026"></div>
+      <div class="row"><label for="f-start">Sale starts</label><input type="date" id="f-start" data-k="start"></div>
+      <div class="row"><label for="f-end">Sale ends</label><input type="date" id="f-end" data-k="end"></div>
+      <div class="row"><span class="lbl">Days in the sale<small id="o-countdown">&nbsp;</small></span><span class="out" id="o-days">&mdash;</span></div>
+    </div>
+
+    <div class="card">
+      <div class="row"><label for="f-cust">How many customers do you have?<small>Everyone who has ever bought from you</small></label><input type="number" id="f-cust" data-k="customers" min="0" inputmode="numeric" placeholder="0"></div>
+      <div class="row"><label for="f-lo">Last promo: orders<small>Optional. Your last sale promo, if you ran one</small></label><input type="number" id="f-lo" data-k="lastOrders" min="0" inputmode="numeric" placeholder="0"></div>
+      <div class="row"><label for="f-ls">Last promo: sales</label><span class="unit">$</span><input type="number" id="f-ls" data-k="lastSales" min="0" inputmode="numeric" placeholder="0"></div>
+      <div class="row"><label for="f-goal">This promo's sales goal</label><span class="unit">$</span><input type="number" id="f-goal" data-k="goal" min="0" inputmode="numeric" placeholder="0"></div>
+      <div class="row"><label for="f-avg">Average order<small id="o-avghint">Your usual order size</small></label><span class="unit">$</span><input type="number" id="f-avg" data-k="avg" min="0" inputmode="numeric" placeholder="0"></div>
+      <div class="row"><span class="lbl">Orders you need</span><span class="out" id="o-orders">&mdash;</span></div>
+    </div>
+
+    <div class="card">
+      <div class="stack"><span class="lbl" id="l-crm">Do you have a CRM?<small>A customer system like Vast Action that tracks lists, emails and call notes</small></span>
+        <div class="seg wide" data-seg="crm" role="group" aria-labelledby="l-crm"><button type="button" data-v="yes">Yes, I have one</button><button type="button" data-v="no">No CRM yet</button></div>
+      </div>
+      <div class="stack"><span class="lbl" id="l-txt">How will you send texts?</span>
+        <div class="seg wide" data-seg="texting" role="group" aria-labelledby="l-txt"><button type="button" data-v="simpletexting">SimpleTexting</button><button type="button" data-v="iphone">My own iPhone</button><button type="button" data-v="none">No texts</button></div>
+      </div>
+    </div>
+    <div id="rules"></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="step" id="s2">
+    <div class="step-head"><span class="step-n">02</span><h2>Tempt &amp; Touch: what goes out, and when</h2></div>
+    <p class="step-sub">Pick your channels, then put a date on every touch. <strong>L</strong> = Launch, <strong>R</strong> = Reminder, <strong>LC</strong> = Last Chance. These dates fill in your day-by-day plan in step 4 for you.</p>
+
+    <div class="card">
+      <div class="ctitle"><h3>Direct mail</h3><div class="seg" data-seg="dm"><button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button></div></div>
+      <div data-show="dm=yes">
+        <div class="row"><label for="d-dma">Design approved by</label><input type="date" id="d-dma" data-k="dmApproved"></div>
+        <div class="row"><label for="d-dmd">Mail drops</label><input type="date" id="d-dmd" data-k="dmDrop"></div>
+        <div class="row"><label for="d-dmf">Follow-up calls start</label><input type="date" id="d-dmf" data-k="dmFollow"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ctitle"><h3>Email</h3><div class="seg" data-seg="em"><button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button></div></div>
+      <div data-show="em=yes">
+        <div class="row"><label for="d-eml">Launch (L)</label><input type="date" id="d-eml" data-k="emL"></div>
+        <div class="row"><label for="d-emr1">Reminder 1 (R)</label><input type="date" id="d-emr1" data-k="emR1"></div>
+        <div class="row"><label for="d-emr2">Reminder 2 (R)<small>Optional</small></label><input type="date" id="d-emr2" data-k="emR2"></div>
+        <div class="row"><label for="d-emlc">Last chance (LC)</label><input type="date" id="d-emlc" data-k="emLC"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ctitle"><h3>Text</h3><div class="seg" data-seg="tx"><button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button></div></div>
+      <div data-show="tx=yes">
+        <div class="row"><label for="d-apt">Appreciation text<small>Something of value or a thank-you, a few days BEFORE any promo text</small></label><input type="date" id="d-apt" data-k="txApp"></div>
+        <div class="row"><label for="d-txl">Launch (L)</label><input type="date" id="d-txl" data-k="txL"></div>
+        <div class="row"><label for="d-txr1">Reminder 1 (R)</label><input type="date" id="d-txr1" data-k="txR1"></div>
+        <div class="row"><label for="d-txr2">Reminder 2 (R)<small>Optional</small></label><input type="date" id="d-txr2" data-k="txR2"></div>
+        <div class="row"><label for="d-txlc">Last chance (LC)</label><input type="date" id="d-txlc" data-k="txLC"></div>
+        <div class="row" data-show="texting=iphone"><label for="f-txn">People on your text list<small>Leave blank to use your customer count</small></label><input type="number" id="f-txn" data-k="textList" min="0" inputmode="numeric" placeholder="0"></div>
+      </div>
+      <div id="iphone-math"></div>
+    </div>
+
+    <div class="card">
+      <div class="ctitle"><h3>Voice drop</h3><div class="seg" data-seg="vd"><button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button></div></div>
+      <div data-show="vd=yes">
+        <div class="row"><label for="d-vdl">Launch (L)</label><input type="date" id="d-vdl" data-k="vdL"></div>
+        <div class="row"><label for="d-vdlc">Last chance (LC)</label><input type="date" id="d-vdlc" data-k="vdLC"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="ctitle"><h3>Extension</h3><div class="seg" data-seg="ext"><button type="button" data-v="yes">Yes</button><button type="button" data-v="no">No</button></div></div>
+      <div data-show="ext=yes">
+        <div class="row"><label for="d-exs">Extension starts</label><input type="date" id="d-exs" data-k="extStart"></div>
+        <div class="row"><label for="d-exe">Extension ends</label><input type="date" id="d-exe" data-k="extEnd"></div>
+        <label class="ck"><input type="checkbox" data-k="extEm"><span>Announce it by email</span></label>
+        <label class="ck"><input type="checkbox" data-k="extTx"><span>Announce it by text</span></label>
+      </div>
+    </div>
+    <p class="note">Keep it flexible: you decide on the extension near the end, based on how the sale is going. Don't announce it up front.</p>
+  </section>
+
+  <!-- 3 -->
+  <section class="step" id="s3">
+    <div class="step-head"><span class="step-n">03</span><h2>Target: your phone plan</h2></div>
+    <p class="step-sub">Emails and texts get attention. <strong>Calls close the orders.</strong> Work out how many calls this takes, then block the time.</p>
+    <div class="card" id="call-lists">
+      <div class="ctitle"><h3>Who you call, in this order</h3></div>
+      <label class="ck"><input type="checkbox" data-k="lsInbound"><span>1. Inbound: anyone who texts, emails or calls you back<small>Same day. These are the warmest people you have.</small></span></label>
+      <label class="ck"><input type="checkbox" data-k="lsClick"><span>2. Clicks &amp; opens: people who clicked or opened your email<small>They looked. Call them while it's fresh.</small></span></label>
+      <label class="ck"><input type="checkbox" data-k="lsTop"><span>3. Your Top list<small>Your best customers: biggest and most recent orders.</small></span></label>
+      <label class="ck"><input type="checkbox" data-k="lsGold"><span>4. Your GOLD list<small>The customers you'd hate to miss. Everyone on it gets a personal call.</small></span></label>
+    </div>
+    <div class="card">
+      <div class="row"><label for="f-call">Customers you plan to call<small id="o-callhint">&nbsp;</small></label><input type="number" id="f-call" data-k="toCall" min="0" inputmode="numeric" placeholder="0"></div>
+      <div class="row"><label for="f-cph">Calls you make in an hour<small>Dials, not conversations. 12 to 15 is normal.</small></label><input type="number" id="f-cph" data-k="cph" min="1" inputmode="numeric"></div>
+      <div class="row"><label for="f-blk">Length of one call block</label><input type="number" id="f-blk" data-k="blockLen" min="0.5" step="0.5" inputmode="decimal"><span class="unit">hrs</span></div>
+      <div class="row"><span class="lbl">Phone hours you need</span><span class="out" id="o-need">&mdash;</span></div>
+      <div class="row"><span class="lbl">Call blocks on your plan<small>Counted from step 4: any day that says "call"</small></span><span class="out" id="o-have">0</span></div>
+    </div>
+    <div id="phone-verdict"></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="step" id="s4">
+    <div class="step-head"><span class="step-n">04</span><h2>Day by day</h2></div>
+    <p class="step-sub">Every day from your first touch to your last. The colored tags come from your dates in step 2. You write the <strong>focus</strong>: a call block, follow-ups, an event, admin, or OFF. Tap a quick-fill, then tap the days it goes on.</p>
+    <div class="card">
+      <div class="quick" id="quick"><span>Quick-fill: pick one, then tap a day's box</span></div>
+      <div id="days"><p class="empty">Put in your sale dates in step 1 and your day-by-day plan appears here.</p></div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="step" id="s5">
+    <div class="step-head"><span class="step-n">05</span><h2>Done by launch day</h2></div>
+    <p class="step-sub">Everything on this list is finished <strong>before</strong> your first email or text goes out. <span class="count" id="c-pre"></span></p>
+    <div class="card" id="pre"></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="step" id="s6">
+    <div class="step-head"><span class="step-n">06</span><h2>Your call list, kept up to date</h2></div>
+    <p class="step-sub" id="list-sub">The whole game during a promo: never call someone twice by accident, and never miss someone who's ready. <span class="count" id="c-list"></span></p>
+    <div class="card" id="list"></div>
+    <div id="crm-push"></div>
+  </section>
+
+  <!-- 7 -->
+  <section class="step" id="s7">
+    <div class="step-head"><span class="step-n">07</span><h2>During &amp; after the sale</h2></div>
+    <p class="step-sub">What you do every day the sale is live, then the numbers you write down when it ends. <span class="count" id="c-dur"></span></p>
+    <div class="card" id="during"></div>
+    <div class="card">
+      <div class="ctitle"><h3>Your numbers</h3><span class="count">fill in when it ends</span></div>
+      <div class="stats">
+        <div class="stat"><label for="s-sent">Sent</label><input type="number" id="s-sent" data-k="stSent" min="0" inputmode="numeric"></div>
+        <div class="stat"><label for="s-open">Opens</label><input type="number" id="s-open" data-k="stOpens" min="0" inputmode="numeric"></div>
+        <div class="stat"><label for="s-click">Clicks</label><input type="number" id="s-click" data-k="stClicks" min="0" inputmode="numeric"></div>
+        <div class="stat"><label for="s-calls">Calls made</label><input type="number" id="s-calls" data-k="stCalls" min="0" inputmode="numeric"></div>
+        <div class="stat"><label for="s-cont">Contacted</label><input type="number" id="s-cont" data-k="stContacted" min="0" inputmode="numeric"></div>
+        <div class="stat"><label for="s-closed">Orders</label><input type="number" id="s-closed" data-k="stClosed" min="0" inputmode="numeric"></div>
+        <div class="stat"><label for="s-sales">Sales $</label><input type="number" id="s-sales" data-k="stSales" min="0" inputmode="numeric"></div>
+        <div class="stat"><label>Closing %<small style="display:block;text-transform:none;letter-spacing:0">orders / contacted</small></label><b id="o-close">&mdash;</b></div>
+        <div class="stat"><label>Reach %<small style="display:block;text-transform:none;letter-spacing:0">contacted / calls</small></label><b id="o-conv">&mdash;</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="step" id="s8">
+    <div class="step-head"><span class="step-n">08</span><h2>Finalize &amp; download</h2></div>
+    <p class="step-sub">When the plan is ready, download it. Then turn it in on your dashboard.</p>
+    <div class="card">
+      <div class="ready">
+        <div class="big" id="r-pct">0%</div>
+        <p class="lab" id="r-lab">plan ready</p>
+        <div class="meter"><i id="r-bar"></i></div>
+        <ul id="r-miss"></ul>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="act" id="dl-pdf" type="button">Download my plan (PDF)</button>
+      <button class="act ghost" id="copy-link" type="button">Copy my plan link</button>
+      <button class="act ghost" id="send-copy" type="button">Send myself a copy</button>
+    </div>
+    <p class="actmsg" id="act-msg" hidden></p>
+    <p class="note"><strong>Turning it in:</strong> on your Sharp Ninja dashboard, open the Sale Promo Plan assignment and paste your <strong>plan link</strong> (the Copy my plan link button). Opening that link loads your whole plan back into this page, so it's also your backup if your phone clears it.</p>
+  </section>
+
+  <!-- 9 -->
+  <section class="step res" id="s9">
+    <div class="step-head"><span class="step-n">&rarr;</span><h2>Links &amp; resources</h2></div>
+    <p class="step-sub">Everything you need, one tap away.</p>
+    <div class="card">
+      <a class="resrow" href="https://simpletexting.com/" target="_blank" rel="noopener"><span class="ic">TXT</span><span class="rt"><b>SimpleTexting</b><span>Send your promo texts to your whole list at once, schedule them, and see replies in one inbox.</span></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.vastactioninc.com/" target="_blank" rel="noopener"><span class="ic">VA</span><span class="rt"><b>Vast Action</b><span>The CRM and training behind this sale promo method.</span></span><span class="go">&#8599;</span></a>
+      <a class="resrow" id="crm-mail" href="mailto:lifesrabbithole@gmail.com" target="_blank" rel="noopener"><span class="ic">CRM</span><span class="rt"><b>Get a CRM: email Vast Action</b><span>lifesrabbithole@gmail.com. Say you're a Cutco rep in Sharp Ninja Academy and want to get set up before your sale promo.</span></span><span class="go">&#9993;</span></a>
+      <a class="resrow" href="https://www.vastactioninc.com/pages/crm-training-videos" target="_blank" rel="noopener"><span class="ic">&#9654;</span><span class="rt"><b>Vast Action CRM training videos</b><span>The full library.</span></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://allinalan.github.io/sna-design-your-life/" target="_blank" rel="noopener"><span class="ic">DYL</span><span class="rt"><b>Design Your Life worksheet</b><span>Find the hours for your call blocks before you promise them.</span></span><span class="go">&#8599;</span></a>
+    </div>
+    <div class="card">
+      <div class="ctitle"><h3>Short CRM how-tos (8 minutes or less each)</h3></div>
+      <a class="resrow" href="https://www.youtube.com/watch?v=cRE8xwkHKO0" target="_blank" rel="noopener"><span class="ic">1</span><span class="rt"><b>Email statistics</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=y1jmWfqB6GQ" target="_blank" rel="noopener"><span class="ic">2</span><span class="rt"><b>Make a list from your email stats</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=WzrqJUVkdgY" target="_blank" rel="noopener"><span class="ic">3</span><span class="rt"><b>How to query</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=DKF9VXALaTM" target="_blank" rel="noopener"><span class="ic">4</span><span class="rt"><b>History notes</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=spNtLQVk0L0" target="_blank" rel="noopener"><span class="ic">5</span><span class="rt"><b>Creating a task</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=SN3s5bbaWjU" target="_blank" rel="noopener"><span class="ic">6</span><span class="rt"><b>Managing your lists during sale promo calls</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=-IaBOrazRYk" target="_blank" rel="noopener"><span class="ic">7</span><span class="rt"><b>Take someone off an email that's already scheduled</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=ATY6jME5Brg" target="_blank" rel="noopener"><span class="ic">8</span><span class="rt"><b>Multi-step queries</b></span><span class="go">&#8599;</span></a>
+      <a class="resrow" href="https://www.youtube.com/watch?v=NxYTAcTbo1c" target="_blank" rel="noopener"><span class="ic">9</span><span class="rt"><b>Using tags</b></span><span class="go">&#8599;</span></a>
+    </div>
+    <div class="foot">
+      <p id="save-note">Saved on this device only, as you type. Nobody else sees it until you send it.</p>
+      <button class="reset" id="reset" type="button">Start over</button>
+    </div>
+    <p class="credit">Built on the Sale Promo Max method from Vast Action, Inc. (vastactioninc.com), adapted for Sharp Ninja Academy mentees.</p>
+  </section>
+</div>
+
+<div id="print-summary"></div>
+
+<div class="bar" aria-label="Your promo at a glance">
+  <div class="bar-in">
+    <div class="bt"><i id="b-cdl">To launch</i><b id="b-cd">&mdash;</b></div>
+    <div class="bt"><i>Orders</i><b id="b-ord">&mdash;</b></div>
+    <div class="bt"><i>Blocks</i><b id="b-blk">0</b></div>
+    <div class="bt" style="text-align:right"><i>Ready</i><b id="b-rdy">0%</b></div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var KEY = 'sna-sale-promo-v1';
+  var IPHONE_PER_DAY = 50;          // Alan's rule: from your own iPhone, 50 texts a day, no more
+  var CALL_EVERYONE_UNDER = 500;    // Alan's rule: under 500 customers, you call every one yourself
+  var MAX_DAYS = 120;
+
+  // ── every saved field, with its type. clean() rebuilds anything from outside (a plan link) through this.
+  var F = {
+    name:'s60', theme:'s80', start:'d', end:'d',
+    customers:'n', lastOrders:'n', lastSales:'n', goal:'n', avg:'n',
+    crm:'e:yes|no', texting:'e:simpletexting|iphone|none',
+    dm:'e:yes|no', dmApproved:'d', dmDrop:'d', dmFollow:'d',
+    em:'e:yes|no', emL:'d', emR1:'d', emR2:'d', emLC:'d',
+    tx:'e:yes|no', txApp:'d', txL:'d', txR1:'d', txR2:'d', txLC:'d', textList:'n',
+    vd:'e:yes|no', vdL:'d', vdLC:'d',
+    ext:'e:yes|no', extStart:'d', extEnd:'d', extEm:'b', extTx:'b',
+    lsInbound:'b', lsClick:'b', lsTop:'b', lsGold:'b',
+    toCall:'n', cph:'n', blockLen:'n',
+    stSent:'n', stOpens:'n', stClicks:'n', stCalls:'n', stContacted:'n', stClosed:'n', stSales:'n'
+  };
+  var DEFAULTS = { cph:12, blockLen:2 };
+
+  var PRE = [
+    ['lists','Build your marketing lists','Your full customer list, your Top list and your GOLD list, ready to go.'],
+    ['mail','Direct mail decided','Doing it? Design approved and the drop date set. Not doing it? Mark this done.'],
+    ['email','Emails written and scheduled','Launch, reminder, last chance. Write the extension too, and hold it.'],
+    ['text','Texts written and scheduled','Launch, reminder, last chance, extension. Under 160 characters each.'],
+    ['phone','Call blocks on your calendar','For inbound replies and your outbound calls. Step 4 shows how many.'],
+    ['systems','CRM (or your sheet) and texting platform set up',''],
+    ['hot','Hot List ready','Where every reply, question and service request goes so nobody waits.'],
+    ['trackers','Trackers ready','Call stats, sales results, and what you spend vs. what you make.'],
+    ['pni','Purchased / Not Interested list made','So nobody who said yes or no gets called again.'],
+    ['vm','Voicemail and email auto-reply updated','They mention the sale, so a missed call still sells.'],
+    ['station','Call station ready','Script, trackers and tabs open, phone charged.'],
+    ['appr','Appreciation text sent','Give before you ask: a thank-you or something useful, before any promo text.'],
+    ['support','Shared your plan with your coach','Your dates, subject lines, specials, and who is in and out of each list.']
+  ];
+  var LIST_CRM = [
+    ['l1','Make a list for this promo','Name it so you can find it, like "2026 Holiday Sale Promo".'],
+    ['l2','Make a second list: "Purchased / NI"','Everyone who orders or says not interested goes here, the moment it happens.'],
+    ['l3','After every email, add the clickers to your promo list','Email stats, unique clicks, add them to the promo list. Opens too, if you want a bigger list. (Videos 1 and 2.)'],
+    ['l4','Query the promo list: that\'s your first call list','(Video 3.)'],
+    ['l5','Leave a history note on every call','Even "left a voicemail". Tomorrow you won\'t remember. (Video 4.)'],
+    ['l6','Ordered or not interested? Onto Purchased / NI right away','(Video 6.)'],
+    ['l7','Take Purchased / NI off the emails still scheduled','Optional, but nobody who just ordered wants a "last chance" email. (Video 7.)'],
+    ['l8','Re-run your call list every day','In the promo list, NOT in Purchased / NI, and not contacted since your calls began. (Video 8.)']
+  ];
+  var LIST_SHEET = [
+    ['s1','Make a Google Sheet for this promo','Columns: Name, Phone, List (Top / GOLD / Clicked), Called on, Result, Notes.'],
+    ['s2','Put every customer on it','Under 500 customers, that\'s your whole list, and you call every single one.'],
+    ['s3','Fill in Result on every call','Ordered, Not interested, Call back (with a day), or Left voicemail.'],
+    ['s4','Write a note on every call','Even "left a voicemail". Tomorrow you won\'t remember.'],
+    ['s5','Filter out Ordered and Not interested every morning','What\'s left is today\'s call list.'],
+    ['s6','Call backs go on your Hot List with a day and time','Then call when you said you would.']
+  ];
+  var DUR = [
+    ['d1','Update your lists every day','New opens and clicks in, Purchased / NI out, and off the next reminder.'],
+    ['d2','Answer inbound replies the same day','Texts, emails, voicemails. Warmest people you have.'],
+    ['d3','Work your Hot List call backs','When you said you would.'],
+    ['d4','Outbound calls: clicks, then Top, then GOLD',''],
+    ['d5','Close the deal on the call','Get the order, don\'t just send a link.'],
+    ['d6','Write down your numbers when it ends','Below. Next promo starts from these.']
+  ];
+
+  var QUICK = ['Call block','Follow-up calls','Hot List call backs','Admin / list updates','Event','OFF'];
+
+  function seed(){ return { v:{ cph:12, blockLen:2 }, c:{}, days:{} }; }
+  var ALLCK = {}; [PRE, LIST_CRM, LIST_SHEET, DUR].forEach(function(a){ a.forEach(function(x){ ALLCK[x[0]] = 1; }); });
+
+  function str(v, max){ return (v == null ? '' : String(v)).slice(0, max); }
+  function isDate(v){ return typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v) && !isNaN(parseD(v)); }
+  function cleanVal(type, v){
+    if(type.charAt(0) === 's') return str(v, parseInt(type.slice(1), 10));
+    if(type === 'd') return isDate(v) ? v : '';
+    if(type === 'n'){ var n = parseFloat(v); return isFinite(n) && n >= 0 ? Math.min(n, 1e9) : ''; }
+    if(type === 'b') return v === true;
+    if(type.indexOf('e:') === 0) return type.slice(2).split('|').indexOf(v) >= 0 ? v : '';
+    return '';
+  }
+  function clean(o){
+    if(!o || typeof o !== 'object' || typeof o.v !== 'object' || !o.v) return null;
+    var out = seed();
+    Object.keys(F).forEach(function(k){ if(k in o.v){ var c = cleanVal(F[k], o.v[k]); if(c !== '' && c !== false) out.v[k] = c; } });
+    if(o.c && typeof o.c === 'object') Object.keys(o.c).forEach(function(k){ if(ALLCK[k] && o.c[k] === true) out.c[k] = true; });
+    if(o.days && typeof o.days === 'object') Object.keys(o.days).slice(0, 400).forEach(function(k){
+      if(isDate(k)){ var s = str(o.days[k], 80); if(s) out.days[k] = s; }
+    });
+    return out;
+  }
+  function pack(){
+    return btoa(unescape(encodeURIComponent(JSON.stringify(state))))
+      .replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  }
+  function unpack(s){
+    try { return clean(JSON.parse(decodeURIComponent(escape(atob(s.replace(/-/g,'+').replace(/_/g,'/')))))); }
+    catch(e){ return null; }
+  }
+
+  // ── load: saved copy, then a plan link if one came in
+  var state = null, raw = null;
+  try { raw = localStorage.getItem(KEY); state = raw ? clean(JSON.parse(raw)) : null; } catch(e){ state = null; }
+  if(!state) state = seed();
+  var restored = false;
+  var hashCopy = /^#d=([A-Za-z0-9_-]+)$/.exec(location.hash);
+  if(hashCopy){
+    var incoming = unpack(hashCopy[1]);
+    if(!incoming){
+      alert('That plan link is damaged, so nothing was loaded. Ask for the link again, or open the copy you sent yourself.');
+    } else if(!raw || confirm('Load the plan from this link? It replaces the plan saved on this device.')){
+      state = incoming; restored = true;
+    }
+    try { history.replaceState(null, '', location.pathname + location.search); } catch(e){}
+  }
+  window.addEventListener('hashchange', function(){ if(/^#d=/.test(location.hash)) location.reload(); });
+
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(state)); saveFailed(false); }
+    catch(e){ saveFailed(true); }
+  }
+  // A save that fails quietly costs someone their whole plan. Say it on the page.
+  function saveFailed(bad){
+    var n = $('save-note');
+    n.textContent = bad
+      ? 'Heads up: this browser is NOT saving your plan (Private mode, or storage is blocked). Open this page in a regular Safari or Chrome tab, or use Copy my plan link before you close it.'
+      : 'Saved on this device only, as you type. Nobody else sees it until you send it.';
+    n.classList.toggle('is-over', bad);
+  }
+  if(restored) save();
+
+  function V(k){ var v = state.v[k]; return v === undefined || v === '' ? (k in DEFAULTS ? DEFAULTS[k] : '') : v; }
+  function N(k){ var n = parseFloat(V(k)); return isFinite(n) && n > 0 ? n : 0; }
+  function mk(tag, cls, txt){ var e = document.createElement(tag); if(cls) e.className = cls; if(txt != null) e.textContent = txt; return e; }
+  function money(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+  function int(n){ return Math.round(n).toLocaleString('en-US'); }
+
+  // dates are local calendar days; never let a timezone shift them
+  function parseD(s){ var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ''); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : new Date(NaN); }
+  function ymd(d){ return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+  function addDays(d, n){ var x = new Date(d.getFullYear(), d.getMonth(), d.getDate() + n); return x; }
+  function diffDays(a, b){ return Math.round((parseD(b) - parseD(a)) / 864e5); }
+  function todayYmd(){ return ymd(new Date()); }
+  var WD = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  function short(s){ var d = parseD(s); return WD[d.getDay()] + ' ' + (d.getMonth() + 1) + '/' + d.getDate(); }
+
+  // ── bind plain fields
+  document.querySelectorAll('[data-k]').forEach(function(el){
+    var k = el.getAttribute('data-k'), t = F[k];
+    if(el.type === 'checkbox'){
+      el.checked = state.v[k] === true;
+      el.addEventListener('change', function(){ if(el.checked) state.v[k] = true; else delete state.v[k]; save(); update(); });
+      return;
+    }
+    el.value = V(k);
+    el.addEventListener('input', function(){
+      var c = cleanVal(t, el.value);
+      if(c === '') delete state.v[k]; else state.v[k] = c;
+      save(); update();
+    });
+  });
+  // ── segmented yes/no pickers (tap the lit one again to clear it)
+  document.querySelectorAll('[data-seg]').forEach(function(seg){
+    var k = seg.getAttribute('data-seg');
+    seg.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click', function(){
+        var v = b.getAttribute('data-v');
+        if(state.v[k] === v) delete state.v[k]; else state.v[k] = v;
+        save(); update();
+      });
+    });
+  });
+
+  // ── checklists
+  function checklist(box, items, countEl){
+    box.textContent = '';
+    items.forEach(function(it){
+      var l = mk('label','ck'), i = document.createElement('input'), s = mk('span', null, it[1]);
+      i.type = 'checkbox'; i.checked = state.c[it[0]] === true;
+      if(it[2]) s.appendChild(mk('small', null, it[2]));
+      l.classList.toggle('on', i.checked);
+      i.addEventListener('change', function(){
+        if(i.checked) state.c[it[0]] = true; else delete state.c[it[0]];
+        l.classList.toggle('on', i.checked); save(); update();
+      });
+      l.appendChild(i); l.appendChild(s); box.appendChild(l);
+    });
+  }
+  function doneOf(items){ return items.filter(function(it){ return state.c[it[0]] === true; }).length; }
+  function setCount(el, items){
+    var d = doneOf(items); el.textContent = d + ' of ' + items.length + ' done';
+    el.classList.toggle('full', d === items.length);
+  }
+  checklist($('pre'), PRE); checklist($('during'), DUR);
+  var listMode = null;
+  function listItems(){ return V('crm') === 'yes' ? LIST_CRM : LIST_SHEET; }
+
+  // ── quick-fill chips for the day-by-day plan
+  var picked = null;
+  QUICK.forEach(function(q){
+    var b = mk('button','chip', q); b.type = 'button'; b.setAttribute('aria-pressed','false');
+    b.addEventListener('click', function(){
+      picked = picked === q ? null : q;
+      document.querySelectorAll('#quick .chip').forEach(function(c){ c.setAttribute('aria-pressed', String(c.textContent === picked)); });
+    });
+    $('quick').appendChild(b);
+  });
+
+  // ── what each date carries, from step 2
+  function touches(){
+    var T = {};
+    function add(k, label, cls){ var d = V(k); if(isDate(d)) (T[d] = T[d] || []).push([label, cls || '']); }
+    add('start','Sale starts','edge'); add('end','Last day','edge');
+    if(V('dm') === 'yes'){ add('dmApproved','Mail design approved'); add('dmDrop','Mail drops'); add('dmFollow','Mail follow-up calls'); }
+    if(V('em') === 'yes'){ add('emL','L - Email'); add('emR1','R - Email'); add('emR2','R - Email'); add('emLC','LC - Email'); }
+    if(V('tx') === 'yes'){
+      add('txApp','Appreciation text','txt');
+      var w = waves();
+      if(V('texting') === 'iphone' && w.perWave > 1){
+        w.list.forEach(function(x){
+          for(var i = 0; i < w.perWave; i++){
+            var d = ymd(addDays(parseD(x[1]), i));
+            (T[d] = T[d] || []).push([x[0] + ' - Text 50 (' + (i + 1) + '/' + w.perWave + ')', 'txt']);
+          }
+        });
+      } else { add('txL','L - Text','txt'); add('txR1','R - Text','txt'); add('txR2','R - Text','txt'); add('txLC','LC - Text','txt'); }
+    }
+    if(V('vd') === 'yes'){ add('vdL','L - Voice drop'); add('vdLC','LC - Voice drop'); }
+    if(V('ext') === 'yes'){ add('extStart','Extension starts','edge'); add('extEnd','Extension ends','edge'); }
+    return T;
+  }
+  function waves(){
+    var size = N('textList') || N('customers');
+    var perWave = size ? Math.ceil(size / IPHONE_PER_DAY) : 0;
+    var list = [['L','txL'],['R','txR1'],['R','txR2'],['LC','txLC']].filter(function(x){ return isDate(V(x[1])); })
+      .map(function(x){ return [x[0], V(x[1])]; });
+    return { size:size, perWave:perWave, list:list };
+  }
+  function range(T){
+    var dates = Object.keys(T).sort();
+    if(isDate(V('start')) && isDate(V('end')) && V('end') >= V('start')){
+      var first = dates.length && dates[0] < V('start') ? dates[0] : V('start');
+      var last = V('end');
+      if(V('ext') === 'yes' && isDate(V('extEnd')) && V('extEnd') > last) last = V('extEnd');
+      if(dates.length && dates[dates.length - 1] > last) last = dates[dates.length - 1];
+      var n = diffDays(first, last) + 1;
+      return n > 0 ? { first:first, n:Math.min(n, MAX_DAYS), cut:n > MAX_DAYS } : null;
+    }
+    return null;
+  }
+
+  var daySig = '';
+  function renderDays(){
+    var T = touches(), R = range(T);
+    var sig = JSON.stringify([T, R]);
+    if(sig === daySig) return;
+    daySig = sig;
+    var box = $('days'); box.textContent = '';
+    if(!R){ box.appendChild(mk('p','empty','Put in your sale dates in step 1 (start before end) and your day-by-day plan appears here.')); return; }
+    for(var i = 0; i < R.n; i++){
+      (function(d){
+        var key = ymd(d), row = mk('div','day');
+        if(d.getDay() === 0 || d.getDay() === 6) row.classList.add('wkend');
+        var nm = mk('div','dname', WD[d.getDay()]);
+        nm.appendChild(mk('i', null, (d.getMonth() + 1) + '/' + d.getDate()));
+        var right = mk('div'), tags = mk('div','tags');
+        (T[key] || []).forEach(function(t){ tags.appendChild(mk('span','t ' + t[1], t[0])); });
+        var inp = document.createElement('input'); inp.type = 'text';
+        inp.value = state.days[key] || ''; inp.placeholder = 'Focus for ' + short(key);
+        inp.setAttribute('aria-label','Focus for ' + short(key));
+        inp.addEventListener('input', function(){
+          var s = str(inp.value, 80); if(s) state.days[key] = s; else delete state.days[key];
+          save(); update();
+        });
+        inp.addEventListener('focus', function(){
+          if(picked && !inp.value){ inp.value = picked; state.days[key] = picked; save(); update(); }
+        });
+        right.appendChild(tags); right.appendChild(inp);
+        row.appendChild(nm); row.appendChild(right); box.appendChild(row);
+      })(addDays(parseD(R.first), i));
+    }
+    if(R.cut) box.appendChild(mk('p','empty','Showing the first ' + MAX_DAYS + ' days. Check your dates.'));
+  }
+  function inRangeDays(){
+    var R = range(touches()); if(!R) return [];
+    var out = []; for(var i = 0; i < R.n; i++) out.push(ymd(addDays(parseD(R.first), i)));
+    return out;
+  }
+  function callBlocks(){
+    return inRangeDays().filter(function(k){ return /call/i.test(state.days[k] || ''); }).length;
+  }
+
+  function rule(cls, tag, html){
+    var d = mk('div','rule ' + cls); d.appendChild(mk('b','tag', tag));
+    var p = mk('div'); p.innerHTML = html; d.appendChild(p); return d;
+  }
+  var crmMailHref = 'mailto:lifesrabbithole@gmail.com?subject=' + encodeURIComponent('Getting a CRM for my Cutco sale promo') +
+    '&body=' + encodeURIComponent('Hi! I\'m a Cutco rep in Sharp Ninja Academy and I want to get set up on a CRM before my sale promo. What are the next steps?\n\nName:\nPhone:\nAbout how many customers I have:\n');
+  $('crm-mail').href = crmMailHref;
+
+  // ── recompute everything
+  function update(){
+    // seg + show/hide
+    document.querySelectorAll('[data-seg]').forEach(function(seg){
+      var k = seg.getAttribute('data-seg');
+      seg.querySelectorAll('button').forEach(function(b){ b.setAttribute('aria-pressed', String(state.v[k] === b.getAttribute('data-v'))); });
+    });
+    document.querySelectorAll('[data-show]').forEach(function(el){
+      var p = el.getAttribute('data-show').split('='); el.hidden = V(p[0]) !== p[1];
+    });
+
+    var cust = N('customers'), small = cust > 0 && cust < CALL_EVERYONE_UNDER;
+    var today = todayYmd();
+
+    // days + countdown
+    var okDates = isDate(V('start')) && isDate(V('end'));
+    var days = okDates ? diffDays(V('start'), V('end')) + 1 : 0;
+    $('o-days').textContent = okDates ? (days > 0 ? days : 'check dates') : '—';
+    $('o-days').className = 'out' + (okDates && days <= 0 ? ' is-over' : '');
+    var cd = $('o-countdown'), toLaunch = isDate(V('start')) ? diffDays(today, V('start')) : null;
+    if(toLaunch === null){ cd.textContent = ' '; $('b-cd').textContent = '—'; }
+    else if(toLaunch > 0){
+      var wk = toLaunch / 7;
+      cd.textContent = toLaunch + ' days until launch' + (wk < 6 ? '. Short runway: knock out step 5 this week.' : '. Good runway.');
+      cd.className = wk < 6 ? 'is-warn' : 'is-good';
+      $('b-cdl').textContent = 'To launch'; $('b-cd').textContent = toLaunch + 'd';
+    } else {
+      cd.textContent = toLaunch === 0 ? 'Launch is today.' : 'Your sale is live (or done). Keep going in steps 4 and 7.';
+      cd.className = 'is-good'; $('b-cdl').textContent = 'Launch'; $('b-cd').textContent = toLaunch === 0 ? 'today' : 'live';
+    }
+
+    // goal math
+    var lastAvg = N('lastOrders') && N('lastSales') ? N('lastSales') / N('lastOrders') : 0;
+    $('o-avghint').textContent = lastAvg ? 'Last promo you averaged ' + money(lastAvg) : 'Your usual order size';
+    var avg = N('avg') || lastAvg, need = N('goal') && avg ? Math.ceil(N('goal') / avg) : 0;
+    $('o-orders').textContent = need ? int(need) : '—';
+    $('b-ord').textContent = need ? int(need) : '—';
+
+    // the rules
+    var R = $('rules'); R.textContent = '';
+    if(small){
+      R.appendChild(rule('stop','Under 500 customers: you call every one',
+        'You have <strong>' + int(cust) + ' customers</strong>. That\'s a list you can personally reach, so you do: <strong>you make every call yourself and follow up with EVERY customer</strong> until they order or tell you no. Texts and emails get attention; your calls close it.'));
+    } else if(cust >= CALL_EVERYONE_UNDER){
+      R.appendChild(rule('go','500+ customers',
+        'Work your lists in order (step 3): inbound replies, clicks and opens, your Top list, then your GOLD list. Your texts and emails reach everyone else.'));
+    }
+    if(V('crm') === 'no'){
+      var r = rule('warn','No CRM yet: get one',
+        'A CRM tracks who opened, who clicked, who ordered and every call note, so your call list keeps itself up to date. Until then, step 6 shows you how to run it from a Google Sheet.');
+      var a = mk('a','btnlink','Email Vast Action to get set up →'); a.href = crmMailHref; a.target = '_blank'; a.rel = 'noopener';
+      r.appendChild(a); R.appendChild(r);
+    }
+    if(V('texting') === 'iphone'){
+      R.appendChild(rule('warn','Texting from your iPhone: 50 a day, no more',
+        'Send <strong>no more than 50 texts a day</strong> from your own phone. More than that and your carrier can flag or block your number. Your plan in step 4 splits each text into 50-a-day batches for you. Bigger list? Use SimpleTexting.'));
+    }
+
+    // iPhone wave math
+    var IM = $('iphone-math'); IM.textContent = '';
+    if(V('tx') === 'yes' && V('texting') === 'iphone'){
+      var w = waves();
+      if(w.perWave){
+        var body = 'At 50 a day, each text to your <strong>' + int(w.size) + '</strong> people takes <strong>' + w.perWave + ' day' + (w.perWave === 1 ? '' : 's') + '</strong>.';
+        var clash = false;
+        for(var i = 1; i < w.list.length; i++){ if(diffDays(w.list[i - 1][1], w.list[i][1]) < w.perWave) clash = true; }
+        var wrap = mk('div'); wrap.style.padding = '0 14px 14px';
+        wrap.appendChild(rule(clash ? 'stop' : 'go', clash ? 'Your text dates overlap' : '50-a-day check',
+          body + (clash ? ' Your launch, reminder and last chance texts are closer together than that, so the batches pile up. Space the dates out, text fewer people (your Top list), or use SimpleTexting.'
+                        : ' Your dates leave room for every batch.')));
+        IM.appendChild(wrap);
+      }
+    }
+
+    // phone plan
+    var lists = ['lsInbound','lsClick','lsTop','lsGold'].filter(function(k){ return V(k) === true; }).length;
+    $('o-callhint').textContent = small ? 'Under 500 customers: this is all ' + int(cust) + ' of them' : 'Everyone on the lists you ticked above';
+    if(small && !state.v.toCall){ $('f-call').placeholder = String(cust); }
+    var toCall = N('toCall') || (small ? cust : 0);
+    var hrsNeed = toCall ? toCall / Math.max(1, N('cph')) : 0;
+    var blkLen = N('blockLen') || 2;
+    var blocks = callBlocks(), hrsHave = blocks * blkLen, blocksNeed = Math.ceil(hrsNeed / blkLen);
+    $('o-need').textContent = hrsNeed ? (Math.round(hrsNeed * 10) / 10) + ' hrs = ' + blocksNeed + ' block' + (blocksNeed === 1 ? '' : 's') : '—';
+    $('o-have').textContent = blocks + (blocks ? ' = ' + hrsHave + ' hrs' : '');
+    $('b-blk').textContent = blocks + (blocksNeed ? '/' + blocksNeed : '');
+    var PV = $('phone-verdict'); PV.textContent = '';
+    if(hrsNeed){
+      PV.appendChild(blocks >= blocksNeed
+        ? rule('go','Enough phone time','You planned <strong>' + blocks + ' call blocks</strong>, enough to reach all ' + int(toCall) + '. Now protect them like appointments.')
+        : rule('warn','Not enough phone time yet','You need about <strong>' + blocksNeed + ' call blocks</strong> of ' + blkLen + ' hrs and your plan has <strong>' + blocks + '</strong>. Add "Call block" to ' + (blocksNeed - blocks) + ' more day' + (blocksNeed - blocks === 1 ? '' : 's') + ' in step 4.'));
+    }
+
+    renderDays();
+
+    // step 6 flips between CRM and sheet
+    var mode = V('crm') === 'yes' ? 'crm' : 'sheet';
+    if(mode !== listMode){ listMode = mode; checklist($('list'), listItems()); }
+    $('list-sub').firstChild.textContent = (mode === 'crm'
+      ? 'Your CRM keeps the call list honest. Set it up like this, then re-run it every day. The numbers point to the how-to videos at the bottom. '
+      : 'No CRM? A Google Sheet does the job if you keep it up every day. ');
+    var CP = $('crm-push'); CP.textContent = '';
+    if(mode === 'sheet'){
+      var r2 = rule('warn','The real fix: get a CRM','A sheet works for this promo. A CRM does the list-keeping for you, every promo after it.');
+      var a2 = mk('a','btnlink','Email Vast Action: lifesrabbithole@gmail.com →'); a2.href = crmMailHref; a2.target = '_blank'; a2.rel = 'noopener';
+      r2.appendChild(a2); CP.appendChild(r2);
+    }
+    setCount($('c-pre'), PRE); setCount($('c-list'), listItems()); setCount($('c-dur'), DUR);
+
+    // stats
+    $('o-close').textContent = N('stContacted') ? Math.round(N('stClosed') / N('stContacted') * 100) + '%' : '—';
+    $('o-conv').textContent = N('stCalls') ? Math.round(N('stContacted') / N('stCalls') * 100) + '%' : '—';
+
+    readiness();
+  }
+
+  function readiness(){
+    var miss = [], checks = [];
+    function need(ok, msg){ checks.push(ok); if(!ok) miss.push(msg); }
+    var dated = ['dm','em','tx','vd'].filter(function(c){ return V(c) === 'yes'; });
+    need(!!V('name'), 'Your name (step 1)');
+    need(!!V('theme'), 'A promo name (step 1)');
+    need(isDate(V('start')) && isDate(V('end')) && V('end') >= V('start'), 'Sale start and end dates (step 1)');
+    need(N('customers') > 0, 'Your customer count (step 1)');
+    need(N('goal') > 0 && (N('avg') > 0 || (N('lastOrders') && N('lastSales'))), 'A sales goal and average order (step 1)');
+    need(!!V('crm') && !!V('texting'), 'CRM and texting answers (step 1)');
+    need(dated.length > 0, 'At least one channel turned on (step 2)');
+    need(V('em') !== 'yes' || (isDate(V('emL')) && isDate(V('emLC'))), 'Email launch and last chance dates (step 2)');
+    need(V('tx') !== 'yes' || (isDate(V('txL')) && isDate(V('txLC'))), 'Text launch and last chance dates (step 2)');
+    need(V('tx') !== 'yes' || isDate(V('txApp')), 'An appreciation text date before your first promo text (step 2)');
+    var toCall = N('toCall') || (N('customers') < CALL_EVERYONE_UNDER ? N('customers') : 0);
+    var blkLen = N('blockLen') || 2, needBlocks = toCall ? Math.ceil(toCall / Math.max(1, N('cph')) / blkLen) : 1;
+    need(callBlocks() >= needBlocks, 'Enough call blocks on your day-by-day plan (steps 3 and 4)');
+    var dd = inRangeDays(), filled = dd.filter(function(k){ return state.days[k]; }).length;
+    need(dd.length > 0 && filled >= Math.ceil(dd.length * 0.8), 'A focus on most days of your plan (step 4)');
+    need(doneOf(PRE) >= PRE.length - 2, 'Your launch checklist (step 5)');
+    need(doneOf(listItems()) >= 2, 'Your call list set up (step 6)');
+    var ok = checks.filter(Boolean).length, pct = Math.round(ok / checks.length * 100);
+    $('r-pct').textContent = pct + '%'; $('b-rdy').textContent = pct + '%';
+    $('r-bar').style.width = pct + '%';
+    $('r-lab').textContent = pct === 100 ? 'plan ready: download it and turn it in' : 'plan ready. Still to do:';
+    var ul = $('r-miss'); ul.textContent = '';
+    miss.forEach(function(m){ ul.appendChild(mk('li', null, m)); });
+    // light up finished steps in the jump bar
+    var stepDone = { s1: checks.slice(0,6).every(Boolean), s2: checks.slice(6,10).every(Boolean), s3: checks[10], s4: checks[11], s5: checks[12], s6: checks[13] };
+    document.querySelectorAll('#jump a').forEach(function(a){ var id = a.getAttribute('href').slice(1); a.classList.toggle('done', stepDone[id] === true); });
+    return pct;
+  }
+
+  // ── one summary feeds the PDF, the copy and the print fallback. "## " marks a heading.
+  function sumLines(){
+    var o = [], v = function(k){ return V(k); };
+    function d(k){ return isDate(v(k)) ? short(v(k)) : '-'; }
+    o.push('## The basics');
+    o.push('Promo: ' + (v('theme') || '-'));
+    o.push('Sale: ' + d('start') + ' to ' + d('end') + (isDate(v('start')) && isDate(v('end')) ? ' (' + (diffDays(v('start'), v('end')) + 1) + ' days)' : ''));
+    o.push('Customers: ' + (N('customers') ? int(N('customers')) : '-') + (N('customers') && N('customers') < CALL_EVERYONE_UNDER ? '  -> under 500: I call every customer myself and follow up with every one.' : ''));
+    if(N('lastOrders') || N('lastSales')) o.push('Last promo: ' + int(N('lastOrders')) + ' orders, ' + money(N('lastSales')));
+    var lastAvg = N('lastOrders') && N('lastSales') ? N('lastSales') / N('lastOrders') : 0, avg = N('avg') || lastAvg;
+    o.push('Goal: ' + (N('goal') ? money(N('goal')) : '-') + (avg ? ' at ' + money(avg) + ' average = ' + int(Math.ceil(N('goal') / avg)) + ' orders' : ''));
+    o.push('CRM: ' + (v('crm') === 'yes' ? 'yes' : v('crm') === 'no' ? 'not yet (getting one: lifesrabbithole@gmail.com)' : '-'));
+    o.push('Texts from: ' + ({ simpletexting:'SimpleTexting', iphone:'my iPhone (50 a day max)', none:'no texts' }[v('texting')] || '-'));
+
+    o.push('## Tempt & Touch');
+    function ch(flag, name, parts){
+      if(v(flag) !== 'yes'){ o.push(name + ': ' + (v(flag) === 'no' ? 'no' : '-')); return; }
+      var set = parts.filter(function(p){ return isDate(v(p[1])); }).map(function(p){ return p[0] + ' ' + d(p[1]); });
+      o.push(name + ': ' + (set.length ? set.join(', ') : 'yes, dates not set yet'));
+    }
+    ch('dm','Direct mail',[['approved','dmApproved'],['drops','dmDrop'],['follow-up calls','dmFollow']]);
+    ch('em','Email',[['L','emL'],['R','emR1'],['R','emR2'],['LC','emLC']]);
+    ch('tx','Text',[['appreciation','txApp'],['L','txL'],['R','txR1'],['R','txR2'],['LC','txLC']]);
+    if(v('tx') === 'yes' && v('texting') === 'iphone'){ var w = waves(); if(w.perWave) o.push('  50 a day: each text takes ' + w.perWave + ' days for ' + int(w.size) + ' people'); }
+    ch('vd','Voice drop',[['L','vdL'],['LC','vdLC']]);
+    ch('ext','Extension',[['starts','extStart'],['ends','extEnd']]);
+
+    o.push('## Phone plan');
+    var lists = [['lsInbound','inbound replies'],['lsClick','clicks & opens'],['lsTop','Top list'],['lsGold','GOLD list']].filter(function(x){ return v(x[0]) === true; }).map(function(x){ return x[1]; });
+    o.push('Calling: ' + (lists.length ? lists.join(', then ') : '-'));
+    var toCall = N('toCall') || (N('customers') < CALL_EVERYONE_UNDER ? N('customers') : 0), blkLen = N('blockLen') || 2;
+    var hrs = toCall / Math.max(1, N('cph'));
+    o.push('Customers to call: ' + (toCall ? int(toCall) : '-') + ' at ' + N('cph') + ' calls an hour = ' + (Math.round(hrs * 10) / 10) + ' hrs = ' + Math.ceil(hrs / blkLen) + ' blocks of ' + blkLen + ' hrs');
+    o.push('Call blocks planned: ' + callBlocks());
+
+    o.push('## Day by day');
+    var T = touches();
+    inRangeDays().forEach(function(k){
+      var tags = (T[k] || []).map(function(t){ return t[0]; }).join(' / ');
+      o.push(short(k) + ':  ' + (state.days[k] || '-') + (tags ? '   [' + tags + ']' : ''));
+    });
+
+    function cl(title, items){
+      o.push('## ' + title + ' (' + doneOf(items) + ' of ' + items.length + ')');
+      items.forEach(function(it){ o.push((state.c[it[0]] ? '[x] ' : '[ ] ') + it[1]); });
+    }
+    cl('Done by launch day', PRE);
+    cl(v('crm') === 'yes' ? 'Call list in my CRM' : 'Call list in my Google Sheet', listItems());
+    cl('During the sale', DUR);
+    if(['stSent','stOpens','stClicks','stCalls','stContacted','stClosed','stSales'].some(function(k){ return N(k); })){
+      o.push('## My numbers');
+      o.push('Sent ' + int(N('stSent')) + ' | Opens ' + int(N('stOpens')) + ' | Clicks ' + int(N('stClicks')));
+      o.push('Calls ' + int(N('stCalls')) + ' | Contacted ' + int(N('stContacted')) + ' | Orders ' + int(N('stClosed')) + ' | Sales ' + money(N('stSales')));
+      if(N('stContacted')) o.push('Closing ' + Math.round(N('stClosed') / N('stContacted') * 100) + '%' + (N('stCalls') ? ' | Reach ' + Math.round(N('stContacted') / N('stCalls') * 100) + '%' : ''));
+    }
+    return o;
+  }
+  function title(){ return (V('theme') || 'Sale Promo Plan') + (V('name') ? ' - ' + V('name') : ''); }
+  function stamp(){ try { return new Date().toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' }); } catch(e){ return todayYmd(); } }
+  function restoreLink(){ return location.origin + location.pathname + '#d=' + pack(); }
+  // the PDF's built-in font is Latin-1 only: straighten what typing on a phone puts in
+  function latin(s){
+    return String(s).replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, '-')
+      .replace(/…/g, '...').replace(/[^\x09\x0A\x0D\x20-\x7E\xA0-\xFF]/g, '');
+  }
+  function say(t){ var m = $('act-msg'); m.textContent = t; m.hidden = false; }
+
+  function downloadPdf(){
+    if(!window.jspdf || !window.jspdf.jsPDF){ printFallback(); return; }
+    var doc = new window.jspdf.jsPDF({ unit:'pt', format:'letter' });
+    var W = doc.internal.pageSize.getWidth(), H = doc.internal.pageSize.getHeight(), M = 48, y = M;
+    function room(h){ if(y + h > H - M){ doc.addPage(); y = M; } }
+    doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(15,140,126);
+    doc.text('SHARP NINJA ACADEMY  |  SALE PROMO PLAN', M, y); y += 22;
+    doc.setTextColor(14,26,51); doc.setFontSize(20);
+    doc.splitTextToSize(latin(title()), W - 2 * M).forEach(function(l){ doc.text(l, M, y); y += 23; });
+    doc.setFont('helvetica','normal'); doc.setFontSize(9.5); doc.setTextColor(90,100,120);
+    doc.text('Saved ' + stamp() + '  |  Plan ready: ' + readiness() + '%', M, y); y += 8;
+    sumLines().forEach(function(l){
+      if(l.indexOf('## ') === 0){
+        room(40); y += 16;
+        doc.setFont('helvetica','bold'); doc.setFontSize(10.5); doc.setTextColor(15,140,126);
+        doc.text(latin(l.slice(3)).toUpperCase(), M, y); y += 5;
+        doc.setDrawColor(198,210,228); doc.line(M, y, W - M, y); y += 13;
+        return;
+      }
+      doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(14,26,51);
+      doc.splitTextToSize(latin(l), W - 2 * M).forEach(function(s){ room(14); doc.text(s, M, y); y += 13.5; });
+    });
+    room(40); y += 16;
+    doc.setFont('helvetica','bold'); doc.setFontSize(10.5); doc.setTextColor(15,140,126);
+    doc.text('OPEN THIS PLAN AGAIN', M, y); y += 15;
+    doc.setFont('helvetica','normal'); doc.setFontSize(10); doc.setTextColor(14,26,51);
+    doc.textWithLink('Tap here to load this plan back into the Sale Promo Planner.', M, y, { url: restoreLink() });
+    var file = latin(title()).replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'Sale-Promo-Plan';
+    doc.save(file + '.pdf');
+    say('Downloaded. On iPhone it\'s in the Files app, in Downloads. Turn it in on your dashboard with your plan link (Copy my plan link).');
+  }
+  function buildPrint(){
+    var box = $('print-summary'); box.textContent = '';
+    box.appendChild(mk('h1', null, title()));
+    box.appendChild(mk('p', null, 'Sharp Ninja Academy Sale Promo Plan. Saved ' + stamp() + '.'));
+    sumLines().forEach(function(l){ box.appendChild(l.indexOf('## ') === 0 ? mk('h2', null, l.slice(3).toUpperCase()) : mk('p', null, l)); });
+  }
+  function printFallback(){
+    buildPrint();
+    say('The PDF maker didn\'t load, so this opens your print screen instead. On iPhone: tap Share at the top, then Save to Files. On a computer: choose Save as PDF.');
+    window.print();
+  }
+  window.addEventListener('beforeprint', buildPrint);
+  $('dl-pdf').addEventListener('click', downloadPdf);
+
+  $('copy-link').addEventListener('click', function(){
+    var link = restoreLink();
+    function fallback(){ window.prompt('Copy your plan link:', link); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(link).then(function(){
+        say('Plan link copied. Paste it into the Sale Promo Plan assignment on your dashboard. It opens your whole plan.');
+      }, fallback);
+    } else fallback();
+  });
+
+  function summaryText(){
+    return latin(title()).toUpperCase() + '\n' + sumLines().map(function(l){ return l.indexOf('## ') === 0 ? '\n' + l.slice(3).toUpperCase() : l; }).join('\n') +
+      '\n\nOPEN THIS PLAN AGAIN\n' + restoreLink();
+  }
+  function mailCopy(){
+    location.href = 'mailto:?subject=' + encodeURIComponent('My Sale Promo Plan - ' + stamp()) + '&body=' + encodeURIComponent(summaryText().replace(/\n/g, '\r\n'));
+    say('Your email app should be open with your plan filled in. Put your own address in the To line and send.');
+  }
+  $('send-copy').addEventListener('click', function(){
+    if(!navigator.share){ mailCopy(); return; }
+    navigator.share({ title:'My Sale Promo Plan', text:summaryText() }).then(function(){
+      say('Sent. The link at the bottom of it loads this whole plan back in.');
+    }).catch(function(e){ if(e && e.name === 'AbortError') return; mailCopy(); });
+  });
+
+  $('reset').addEventListener('click', function(){
+    if(!confirm('Clear your whole plan and start over? Copy your plan link first if you want to keep it.')) return;
+    try { localStorage.removeItem(KEY); } catch(e){}
+    location.reload();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
